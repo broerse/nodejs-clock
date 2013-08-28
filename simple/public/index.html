@@ -2,9 +2,14 @@
 
 <body>
 
-The time is <span data-bind="text: ticker"></span>
+<script type="text/x-handlebars">
+The time is {{App.tick}}
+</script>
+
 <script src="/socket.io/socket.io.js"></script>
-<script src="/knockout-2.0.0.js"></script>
+<script src="/jquery-1.9.1.js"></script>
+<script src="/handlebars-1.0.0.js"></script>
+<script src="/ember-1.0.0-rc.7.js"></script>
 <script src="/clock.js"></script>
 
 </body>

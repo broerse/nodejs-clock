@@ -1,13 +1,9 @@
+App = Ember.Application.create({
+  tick: 0
+});
+
 var socket = io.connect(location.hostname);
 
-function ClockModel() {
-	self.ticker = ko.observable(1);
-
-  socket.on('tick', function (data) {
-    self.ticker(data);
-  });
-
-};
-
-ko.applyBindings(new ClockModel());
-
+socket.on('tick', function(data) {
+  App.set('tick', data);
+});
